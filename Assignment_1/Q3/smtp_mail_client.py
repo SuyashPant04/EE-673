@@ -40,13 +40,13 @@ send_cmd("EHLO iitk.ac.in")
 
 #AUTH LOGIN
 send_cmd("AUTH LOGIN") 
-# Expected response: "334 VXNlcm5hbWU6" i.e. "334 Username:" in base64 format
 
-username = "user_id@iitk.ac.in"
+username = "user_id@iitk.ac.in" ### edit the sender email address here
 encoded_username = base64.b64encode(username.encode()).decode() #encoding the username in base64 format
 send_cmd(encoded_username)
 # Expected response: "334 UGFzc3dvcmQ6" i.e. "334 Password:" in base64 format
-password = "user_password"
+
+password = "user_password" ### edit the sender email password here
 encoded_password = base64.b64encode(password.encode()).decode() #encoding the password in base64 format
 send_cmd(encoded_password)
 
